@@ -1,0 +1,89 @@
+{
+  "projectionOrdering": {
+    "Y": [
+      0
+    ],
+    "Series": [
+      1
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Sum of Amount",
+        "Name": "Sum(Sheet4.Amount)",
+        "Type": 1
+      },
+      {
+        "Restatement": "Current Status",
+        "Name": "Sheet4.Current Status",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Series",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Sum of Amount",
+      "queryName": "Sum(Sheet4.Amount)",
+      "roles": {
+        "Y": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Sheet4"
+                }
+              },
+              "Property": "Amount"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Current Status",
+      "queryName": "Sheet4.Current Status",
+      "roles": {
+        "Series": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Sheet4"
+            }
+          },
+          "Property": "Current Status"
+        }
+      }
+    }
+  ]
+}
