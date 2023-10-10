@@ -11,7 +11,9 @@ table 'LocalDateTable_99d56d4a-6b3b-4eeb-9c42-5f01d2c58d09'
 	column Date
 		dataCategory: PaddedDateTableDates
 		dataType: DateTime
+		isDataTypeInferred: false
 		isHidden
+		isNameInferred: false
 		lineageTag: ae165ab2-f323-4585-a0b0-a2b5b5fea729
 		sourceColumn: [Date]
 		summarizeBy: None
@@ -21,6 +23,7 @@ table 'LocalDateTable_99d56d4a-6b3b-4eeb-9c42-5f01d2c58d09'
 	column Year = YEAR([Date])
 		dataCategory: Years
 		dataType: Int64
+		isDataTypeInferred: false
 		isHidden
 		lineageTag: dd9d8ff7-d5fd-4996-a9ef-1c12d38c7316
 		summarizeBy: None
@@ -32,6 +35,7 @@ table 'LocalDateTable_99d56d4a-6b3b-4eeb-9c42-5f01d2c58d09'
 	column MonthNo = MONTH([Date])
 		dataCategory: MonthOfYear
 		dataType: Int64
+		isDataTypeInferred: false
 		isHidden
 		lineageTag: 5fec27ef-2f75-4cb2-a20e-638873dd3c97
 		summarizeBy: None
@@ -43,6 +47,7 @@ table 'LocalDateTable_99d56d4a-6b3b-4eeb-9c42-5f01d2c58d09'
 	column Month = FORMAT([Date], "MMMM")
 		dataCategory: Months
 		dataType: String
+		isDataTypeInferred: false
 		isHidden
 		lineageTag: d28e1a23-0341-4a0f-b41b-fc2f4a26fe86
 		sortByColumn: MonthNo
@@ -55,6 +60,7 @@ table 'LocalDateTable_99d56d4a-6b3b-4eeb-9c42-5f01d2c58d09'
 	column QuarterNo = INT(([MonthNo] + 2) / 3)
 		dataCategory: QuarterOfYear
 		dataType: Int64
+		isDataTypeInferred: false
 		isHidden
 		lineageTag: 54cdb8e1-0ece-4752-a1ba-0c55eca21f83
 		summarizeBy: None
@@ -66,6 +72,7 @@ table 'LocalDateTable_99d56d4a-6b3b-4eeb-9c42-5f01d2c58d09'
 	column Quarter = "Qtr " & [QuarterNo]
 		dataCategory: Quarters
 		dataType: String
+		isDataTypeInferred: false
 		isHidden
 		lineageTag: de3fb936-6e1f-49db-ac14-4e6fc4b900ac
 		sortByColumn: QuarterNo
@@ -78,6 +85,7 @@ table 'LocalDateTable_99d56d4a-6b3b-4eeb-9c42-5f01d2c58d09'
 	column Day = DAY([Date])
 		dataCategory: DayOfMonth
 		dataType: Int64
+		isDataTypeInferred: false
 		isHidden
 		lineageTag: f7e3aff5-a2bc-4c62-97e8-3e1964ebc67f
 		summarizeBy: None

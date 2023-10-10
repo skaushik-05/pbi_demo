@@ -1,0 +1,95 @@
+{
+  "name": "df0cd7ec7099cb7077b6",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 0,
+        "y": 349,
+        "width": 435,
+        "height": 339,
+        "z": 2002,
+        "tabOrder": 2002
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "funnel",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Trend.SoCo Id",
+          "active": true
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sum(Trend.Amount)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t",
+          "Entity": "Trend",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t"
+              }
+            },
+            "Property": "SoCo Id"
+          },
+          "Name": "Trend.SoCo Id",
+          "NativeReferenceName": "SoCo Id"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "t"
+                  }
+                },
+                "Property": "Amount"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(Trend.Amount)",
+          "NativeReferenceName": "Sum of Amount"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "t"
+                    }
+                  },
+                  "Property": "Amount"
+                }
+              },
+              "Function": 0
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true
+  }
+}

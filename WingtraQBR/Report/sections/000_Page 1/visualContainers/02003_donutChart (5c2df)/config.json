@@ -1,0 +1,95 @@
+{
+  "name": "5c2df8b2823ca032ffe7",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 447,
+        "y": 349,
+        "width": 319,
+        "height": 339,
+        "z": 2003,
+        "tabOrder": 2003
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "donutChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Trend.Project Name",
+          "active": true
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sum(Trend.Amount)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t",
+          "Entity": "Trend",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t"
+              }
+            },
+            "Property": "Project Name"
+          },
+          "Name": "Trend.Project Name",
+          "NativeReferenceName": "Project Name"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "t"
+                  }
+                },
+                "Property": "Amount"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(Trend.Amount)",
+          "NativeReferenceName": "Sum of Amount"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "t"
+                    }
+                  },
+                  "Property": "Amount"
+                }
+              },
+              "Function": 0
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true
+  }
+}
